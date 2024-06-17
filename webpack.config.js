@@ -7,13 +7,13 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
-    watchFiles: ['./src/*','./src/index.html']
+    watchFiles: ['./src/*', './src/index.html']
   },
   plugins: [
     new HtmlWebpackPlugin({
-        template: './src/index.html',
-        filename: 'index.html',
-        inject: 'body',
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body',
     }),
   ],
   output: {
@@ -27,18 +27,18 @@ module.exports = {
   },
   module: {
     rules: [
-        {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader'],
-        },
-        {
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
-            type: 'asset/resource',
-        },
-        {
-            test: /\.(woff|woff2|eot|ttf|otf)$/i,
-            type: 'asset/resource',
-        },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 };

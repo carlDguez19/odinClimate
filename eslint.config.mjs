@@ -4,9 +4,8 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 
 export default [
-  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
+  { files: ["**/*.js"], languageOptions: { sourceType: "module" } },//sourceType: "commonjs"
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
-  // eslint-disable-next-line no-undef
   eslintConfigPrettier,
 ];

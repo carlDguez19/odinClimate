@@ -1,6 +1,12 @@
-import { getWeatherData } from "./weatherApiFetch";
+//import { getWeatherData } from "./weatherApiFetch";
+import { buttonEventListener } from "./searchEventListener";
+// eslint-disable-next-line no-unused-vars
+import styles from "./stylings.css";
 
-getWeatherData('el paso');
+
+//const epWeather = getWeatherData('el paso');
+//console.log(epWeather);
+buttonEventListener();
 // function component() {
 //   const element = document.createElement('div');
 

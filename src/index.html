@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>WeatherApp</title>
+  <!-- <link href="src/styling.css" type="text/html"> -->
+</head>
+
+<body>
+  <div class="overall">
+
+    <div class="searchBoxArea">
+      <form action="#" method="POST" name="getPlace">
+        <label for="searchBox">Place: </label>
+        <input type="text" id="searchBox" placeholder="Tokyo" pattern="[A-Za-z]" minlength="1" maxlength="188">
+
+        <button id="searchCityButton" type="button" form="getPlace">Submit</button>
+      </form>
+    </div><!--END searchBoxArea-->
+
+    <div class="tempArea">
+      <span class="area mainTempCell">
+        <div class="mtcMainCont">
+          <div class="tempCont">
+            <div class="currTemp"></div>
+            <img src="" class="tempIconDiv" alt="" />
+            <!-- <div class="tempIconDiv"></div> -->
+            <div class="extraTempInfo"></div>
+          </div>
+          <div class="locCont">
+            <p class="loc"></p>
+          </div>
+        </div>
+      </span>
+      <span class="area sideOne">2</span>
+      <span class="area sideTwo">3</span>
+      <span class="area lastUpdatedDiv">4</span>
+
+      <span class="area bottomOne">5</span>
+      <!-- <div class="area Six">6</div> -->
+      <!-- <div class="area Seven">7</div>
+      <div class="area Eight">8</div> -->
+
+      <!-- <div class="area Nine">9</div>
+      <div class="area Ten">10</div>
+      <div class="area Eleven">11</div>
+      <div class="area Twelve">12</div>
+
+      <div class="area Thirteen">13</div> -->
+      <!-- <div class="area Fourteen">14</div>
+      <div class="area Fifteen">15</div>
+      <div class="area Sixteen">16</div> -->
+    </div>
+
+  </div>
+
+</body>
+
 </html>

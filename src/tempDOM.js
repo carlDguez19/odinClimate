@@ -1,3 +1,6 @@
+import Wind from '../src/icons/wind.png';
+import WindRose from '../src/icons/windRose.png';
+import Moisture from '../src/icons/moisture.png';
 import { getWeatherData } from "./weatherApiFetch";
 import { weatherData } from "./weatherApiFetch";
 import { searchCity } from "./searchEventListener";
@@ -22,4 +25,15 @@ export async function setMainTemp() {
     lCont.textContent = weatherData.location.name + ",\r\n" +
         weatherData.location.region + ",\r\n" +
         weatherData.location.country;
+    windSideOne();
+}
+
+export function windSideOne() {
+    let wIcon = document.querySelector(".windIcon");
+    let windInfo = document.querySelector(".windInfo");
+
+    wIcon.src = Wind;
+    windInfo.textContent = "WIND\r\n\r\n" + "Speed: " + weatherData.current.wind_mph + "mph\r\n" +
+        "Gust: " + weatherData.current.gust_mph + "mph\r\n" +
+        "Direction: " + weatherData.current.wind_dir;
 }

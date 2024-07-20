@@ -1,19 +1,25 @@
+:root {
+    --darkAqua: rgb(0, 130, 255);
+    --darkFont: #113;
+}
+
 .overall {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .searchBoxArea {
     margin-top: 20px;
     display: flex;
-    background-color: darkred;
-    width: 30%;
+    width: auto;
     height: auto;
     justify-self: center;
     align-self: center;
+    font-size: larger;
+    font-weight: bold;
 }
 
 .tempArea {
@@ -22,18 +28,12 @@
     grid-template-rows: repeat(4, 120px);
     column-gap: 20px;
     row-gap: 20px;
-    background-color: blue;
     margin-top: 30px;
     margin-bottom: 30px;
     border-radius: 5px;
-    /* justify-items: center;
-    align-items: center;
-    justify-content: center;
-    align-content: center; */
 }
 
 .area {
-    background-color: darkgreen;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -41,30 +41,25 @@
     box-shadow: 4px 4px 2px #222;
     white-space: pre;
     font-size: 12pt;
-    font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
-    color: #226;
+    color: var(--darkFont);
 }
 
 .mainTempCell {
     grid-column: 1 / 4;
     grid-row: 1 / 4;
-    /* display: flex; */
-    /* justify-self: center;
-    align-self: center; */
-    background-color: red;
+    background-color: aqua;
 }
 
 .sideTwo {
     grid-column: 4 / 5;
     grid-row: 3 / 5;
-    background-color: orange;
 }
 
-.bottomOne {
+.sideFour {
     grid-column: 2 / 4;
     grid-row: 4 / 5;
-    background-color: orangered;
+    background-color: var(--darkAqua);
 }
 
 /* MAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREAMAINTEMPAREA */
@@ -72,7 +67,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
     width: 90%;
     height: 90%;
 }
@@ -85,14 +79,15 @@
     align-items: center;
     width: 50%;
     height: 100%;
-    background-color: green;
     text-align: center;
 }
 
 .locCont {
-    background-color: lawngreen;
     white-space: normal;
     font-size: larger;
+    border-radius: 10px;
+    background-color: var(--darkAqua);
+    margin-left: 10px;
 }
 
 .currTemp,
@@ -103,7 +98,7 @@
     align-items: center;
     width: 100%;
     height: 33.3%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 .currTemp {
@@ -112,14 +107,15 @@
 }
 
 .tempIconDiv {
-    background-color: orange;
+    /* background-color: orange; */
     object-fit: cover;
 }
 
 .extraTempInfo {
-    background-color: orangered;
+    /* background-color: orangered; */
     border: 15px 15px;
     font-weight: bold;
+    white-space: pre-line;
 }
 
 /* SIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLESIDEONESTYLE */
@@ -127,27 +123,61 @@
 .sideOne {
     grid-column: 4 / 5;
     grid-row: 1 / 3;
-    background-color: orange;
+}
+
+.sideOne,
+.sideTwo {
     display: flex;
     flex-direction: column;
     border: 7px;
+    background-color: var(--darkAqua);
 }
 
 .windIcon,
-.windInfo {
+.windInfo,
+.uvIcon,
+.uvInfo {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 80%;
     margin-top: 7px;
 }
 
-.windIcon {
+.windIcon,
+.uvIcon {
     height: 30%;
     object-fit: contain;
 }
 
-.windInfo {
+.windInfo,
+.uvInfo,
+.sideThree {
     height: 70%;
     white-space: pre-line;
+    text-align: center;
+}
+
+.sideThree {
+    height: 100%;
+    font-weight: bold;
+    background-color: var(--darkAqua);
+}
+
+.moInfo {
+    margin-left: 10px;
+}
+
+.moIcon {
+    width: 20%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.windIcon,
+.uvIcon,
+.moIcon {
+    background-color: aqua;
+    border-radius: 10px;
+
 }

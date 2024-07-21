@@ -5,6 +5,8 @@ import Climate from '../src/icons/climate.png';
 import { getWeatherData } from "./weatherApiFetch";
 import { weatherData } from "./weatherApiFetch";
 import { searchCity } from "./searchEventListener";
+import { errorFound } from './weatherApiFetch';
+import { displayErrorOverlay } from './weatherApiFetch';
 
 export function preFillIcons() {
     let tIcon = document.querySelector(".tempIconDiv");
@@ -21,27 +23,27 @@ export function preFillIcons() {
 export async function setMainTemp() {
     await getWeatherData(searchCity.value);
 
-    let cTemp = document.querySelector(".currTemp");
-    let tIcon = document.querySelector(".tempIconDiv");
-    let extTemp = document.querySelector(".extraTempInfo");
-    let lCont = document.querySelector(".loc");
+    if (errorFound == 1) {
+        displayErrorOverlay();
+    } else {
+        let cTemp = document.querySelector(".currTemp");
+        let tIcon = document.querySelector(".tempIconDiv");
+        let extTemp = document.querySelector(".extraTempInfo");
+        let lCont = document.querySelector(".loc");
 
-    console.log(weatherData);
-    //let mainTempDiv = document.querySelector(".mainTempCell");
-    //mainTempDiv.textContent = weatherData.current.temp_f + " " + weatherData.location.name;
-
-    tIcon.src = "https:" + weatherData.current.condition.icon;
-    cTemp.textContent = weatherData.current.temp_f + "°F";
-    extTemp.textContent = weatherData.current.condition.text + "\r\n" +
-        "Feels Like: " + weatherData.current.feelslike_f + "°F\r\n" +
-        "Heat Index: " + weatherData.current.heatindex_f + "°F\r\n";
-    lCont.textContent = weatherData.location.name + ",\r\n" +
-        weatherData.location.region + ",\r\n" +
-        weatherData.location.country;
-    windSideOne();
-    uvSideTwo();
-    lastUpdateSideThree();
-    moistureSideFour();
+        tIcon.src = "https:" + weatherData.current.condition.icon;
+        cTemp.textContent = weatherData.current.temp_f + "°F";
+        extTemp.textContent = weatherData.current.condition.text + "\r\n" +
+            "Feels Like: " + weatherData.current.feelslike_f + "°F\r\n" +
+            "Heat Index: " + weatherData.current.heatindex_f + "°F\r\n";
+        lCont.textContent = weatherData.location.name + ",\r\n" +
+            weatherData.location.region + ",\r\n" +
+            weatherData.location.country;
+        windSideOne();
+        uvSideTwo();
+        lastUpdateSideThree();
+        moistureSideFour();
+    }
 }
 
 export function windSideOne() {
@@ -79,3 +81,4 @@ export function moistureSideFour() {
         "%\r\nDewpoint: " + weatherData.current.dewpoint_f +
         "°F\r\nPressure: " + weatherData.current.pressure_in + "in";
 }
+

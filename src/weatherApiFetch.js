@@ -11,7 +11,6 @@ export async function getWeatherData(place) {
                 throw new Error(response.statusText);
             }
         })
-        // eslint-disable-next-line no-unused-vars
         .catch(function (error) {
             let eOverlay = document.querySelector(".errorOverlay");
             eOverlay.style.animation = "errorSlideOn 1.5s forwards";

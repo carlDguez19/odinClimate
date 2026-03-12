@@ -21,7 +21,7 @@ A weather application built with vanilla JavaScript and bundled with Webpack. Us
 
 ---
 
-Project Structure
+## Project Structure
 
 ```txt
 src/
@@ -43,14 +43,14 @@ README.md
 
 ---
 
-How It Works
+## How It Works
 -    `weatherApiFetch.js` handles API calls and returns structured weather data.
 - 	 `tempDOM.js` updates the DOM with the fetched data.
 - 	 `searchEventListener.js` listens for user input and triggers the fetch workflow.
 - 	 `index.js` ties everything together and initializes the app.
 - 	Webpack bundles all modules and assets into the `dist/` folder for deployment.
 
-What I Learned
+## What I Learned
 - 	Setting up and configuring Webpack
 - 	Using ES6 modules to organize code
 - 	Handling asynchronous API calls with `async/await`
@@ -58,7 +58,7 @@ What I Learned
 - 	Managing assets like icons through Webpack
 - 	Structuring a small JavaScript application cleanly
 
-Installation
+## Installation
 
 ```bash
 git clone https://github.com/carlDguez19/odinClimate.git
